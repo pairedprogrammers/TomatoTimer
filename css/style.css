@@ -1,0 +1,36 @@
+body{
+    font-size: 13px;
+}
+
+.largeText {
+    font-size: 18em;
+}
+
+.smallText {
+    font-size: 2em;
+}
+
+.taskText {
+     font-size: 30px;
+     padding-left: 10px;
+     padding-right: 10px;
+     height: 80px;
+ 
+      outline: none;
+      border: none !important;
+      -webkit-box-shadow: none !important;
+      -moz-box-shadow: none !important;
+      box-shadow: none !important;
+}
+
+.taskText:focus{
+      border: 1px solid #BAB6B1 !important;
+}
+
+
+@media (min-width: 768px) { 
+    .vertical-align {
+        display: flex;
+        align-items: center;
+    }
+}

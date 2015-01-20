@@ -6,7 +6,4 @@ var app = angular.module('tomatotimer', ['ngRoute'])
             controller: 'TimerCtrl',
             templateUrl: 'views/timer.html'
         })
-    })
-    .controller('TimerCtrl',[function(){
-
-    }]);
+    });
