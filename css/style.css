@@ -34,3 +34,7 @@ body{
         align-items: center;
     }
 }
+
+.row {
+    margin: 1em;
+}
