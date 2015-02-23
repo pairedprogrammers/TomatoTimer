@@ -1,0 +1,19 @@
+{
+  "core": {
+    "css": [
+      "bower_components/bootstrap/dist/css/bootstrap.css",
+      "bower_components/angular/angular-csp.css",
+      "css/style.css"
+    ],
+    "js": [
+      "bower_components/jquery/dist/jquery.js",
+      "bower_components/bootstrap/dist/js/bootstrap.min.js",
+      "bower_components/angular/angular.js",
+      "bower_components/angular-route/angular-route.js",
+      "bower_components/moment/min/moment.min.js",
+      "js/app.js",
+      "js/TimerCtrl.js",
+      "js/momentFactory.js"
+    ]
+  }
+}
