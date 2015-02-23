@@ -1,0 +1,77 @@
+
+<div class="row">
+    <div class="col-xs-12">
+        <h1>{{timeRemaining}} <small>{{remainingUoM}}{{timeRemaining != 1 ? 's' : ''}} remaining{{progress}}</small></h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-3">
+        <button type="button" class="btn btn-primary btn-lg btn-block" ng-click="startWork()">Start Work</button>
+    </div>
+    <div class="col-sm-3">
+        <button type="button" class="btn btn-primary btn-lg btn-block" ng-click="startShortBreak()">Start Short Break</button>
+    </div>
+    <div class="col-sm-3">
+        <button type="button" class="btn btn-primary btn-lg btn-block" ng-click="startLongBreak()">Start Long Break</button>
+    </div>
+    <div class="col-sm-3">
+        <button type="button" class="btn btn-danger btn-lg btn-block" ng-click="stop()"><span class="glyphicon glyphicon-off"></span> Stop</button>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <input type="text" ng-model="task" class="form-control text-center taskText" placeholder="Task">
+    </div>
+</div>
+    
+    
+<!--    <div class="col-md-4 col-xs-4" ng-show="countingDown">-->
+<!--        <div class="largeText text-right" style="height: 100%; vertical-align: center;">{{timeRemaining}}</div>-->
+<!--    </div>-->
+<!--    <div class="col-md-2 col-xs-8" ng-show="countingDown">-->
+<!--        <div class="smallText" style="height: 100%; vertical-align: center;">{{remainingUoM}}{{timeRemaining != 1 ? 's' : ''}} remaining{{progress}}</div>-->
+<!--    </div>-->
+    
+<!--    <div class="col-md-4 col-xs-4" ng-hide="countingDown">-->
+<!--        <div class="largeText"><span class="glyphicon glyphicon-ok"></span></div>-->
+<!--    </div>-->
+<!--    <div class="col-md-2 col-xs-8" ng-hide="countingDown">-->
+<!--        <div class="smallText">Finished</div>-->
+<!--    </div>-->
+    
+<!--    <div class="col-md-2 col-xs-12">-->
+<!--      <p><button type="button" class="btn btn-primary btn-lg btn-block" ng-click="startWork()">Start Work</button></p> -->
+<!--      <p><button type="button" class="btn btn-primary btn-lg btn-block" ng-click="startShortBreak()">Start Short Break</button></p> -->
+<!--      <p><button type="button" class="btn btn-primary btn-lg btn-block" ng-click="startLongBreak()">Start Long Break</button></p> -->
+<!--    </div>-->
+<!--    <div class="col-md-4 col-xs-12">-->
+<!--        <input type="text" ng-model="task" class="form-control text-center taskText" placeholder="Task">-->
+<!--    </div> -->
+<!--</div>-->
+
+<!--<div class="row">-->
+<!--    <div class="col-md-4 col-xs-4" ng-show="countingDown">-->
+<!--        <div class="largeText text-right">{{timeRemaining}}</div>-->
+<!--    </div>-->
+<!--    <div class="col-md-2 col-xs-8" ng-show="countingDown">-->
+<!--        <div class="smallText">{{remainingUoM}}{{timeRemaining != 1 ? 's' : ''}} remaining{{progress}}</div>-->
+<!--    </div>-->
+    
+<!--    <div class="col-md-4 col-xs-4" ng-hide="countingDown">-->
+<!--        <div class="largeText"><span class="glyphicon glyphicon-ok"></span></div>-->
+<!--    </div>-->
+<!--    <div class="col-md-2 col-xs-8" ng-hide="countingDown">-->
+<!--        <div class="smallText">Finished</div>-->
+<!--    </div>-->
+    
+<!--    <div class="col-md-2 col-xs-12">-->
+<!--      <p><button type="button" class="btn btn-primary btn-lg btn-block" ng-click="startWork()">Start Work</button></p> -->
+<!--      <p><button type="button" class="btn btn-primary btn-lg btn-block" ng-click="startShortBreak()">Start Short Break</button></p> -->
+<!--      <p><button type="button" class="btn btn-primary btn-lg btn-block" ng-click="startLongBreak()">Start Long Break</button></p> -->
+<!--    </div>-->
+<!--    <div class="col-md-4 col-xs-12">-->
+<!--        <input type="text" ng-model="task" class="form-control text-center taskText" placeholder="Task">-->
+<!--    </div> -->
+<!--</div>-->
+
+<audio src="alarm.mp3" type="audio/mp3" id="alarm"></audio>

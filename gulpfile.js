@@ -4,9 +4,8 @@ var gulp = require('gulp'),
     jshint = require('gulp-jshint'),
     clean = require('gulp-clean'),
     inject = require('gulp-inject'),
-    assets = require('./config/assets.json');
-
-
+    assets = require('./config/assets.json'),
+    concat = require('gulp-concat');
 
 
 gulp.task('lint', function () {
@@ -28,12 +27,64 @@ gulp.task('inject', function () {
         .pipe(gulp.dest('./'));
 });
 
-gulp.task('clean', function () {
-    return gulp.src('./dist', { read: false })
+gulp.task('clean:dist', function () {
+    return gulp.src('./dist', {read: false})
         .pipe(clean());
 });
 
 
-gulp.task('default', ['lint', 'inject'], function() {
+gulp.task('css:dist',  function () {
+
+    return gulp.src(assets.core.css)
+        .pipe(concat('styles.min.css'))
+        .pipe(gulp.dest('dist/css'));
+
+
+});
+
+gulp.task('js:dist', function () {
+
+    return gulp.src(assets.core.js)
+        .pipe(jshint())
+        .pipe(concat('app.min.js'))
+        .pipe(gulp.dest('dist/js'));
+
+
+})
+
+gulp.task('inject:dist', ['js:dist', 'css:dist'], function () {
+    var target = gulp.src('./dist/index.html');
+
+    return target
+        .pipe(inject(gulp.src('./dist/css/**/*.min.css')))
+        .pipe(inject(gulp.src('./dist/js/**/*.min.js')))
+        .pipe(gulp.dest('./dist'));
+
+
+});
+
+gulp.task('clone:dist', ['clean:dist'], function () {
+
+    var filesToMove = [
+        './views/**',
+        './alarm.mp3',
+        './background.js',
+        './manifest.json',
+        './index.html',
+        './icon.png'
+    ];
+
+    return gulp.src(filesToMove, {base: './'})
+        .pipe(gulp.dest('dist'));
+
+
+});
+
+
+gulp.task('default', ['lint', 'inject'], function () {
     // place code for your default task here
+});
+
+
+gulp.task('dist', ['clone:dist', 'inject:dist'], function () {
 });
