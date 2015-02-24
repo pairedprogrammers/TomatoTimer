@@ -50,14 +50,14 @@ gulp.task('js:dist', function () {
         .pipe(gulp.dest('dist/js'));
 
 
-})
+});
 
 gulp.task('inject:dist', ['js:dist', 'css:dist'], function () {
     var target = gulp.src('./dist/index.html');
 
     return target
-        .pipe(inject(gulp.src('./dist/css/**/*.min.css')))
-        .pipe(inject(gulp.src('./dist/js/**/*.min.js')))
+        .pipe(inject(gulp.src('./dist/css/**/*.min.css', {read: false}), {relative: true}))
+        .pipe(inject(gulp.src('./dist/js/**/*.min.js', {read: false}), {relative: true}))
         .pipe(gulp.dest('./dist'));
 
 
